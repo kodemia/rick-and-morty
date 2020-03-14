@@ -1,3 +1,7 @@
+figure {
+  margin: 0;
+}
+
 .App {
   text-align: center;
   height: 100%;
@@ -30,16 +34,13 @@
   transition: 0.3s ease-in all;
   margin-bottom: 10px;
   max-width: 300px;
+  z-index: 100;
 }
 
 .Card:hover {
   /* border-color: #2a912c; */
   cursor: pointer;
   text-shadow: -2px 0 #14a4b0, 0 2px #14a4b0, 2px 0 #14a4b0, 0 -2px #14a4b0;
-}
-
-.Card-image figure {
-  margin: 0px;
 }
 
 .Card-image figure img {
@@ -51,12 +52,6 @@
   filter: invert(100%);
 }
 
-@media screen and (max-width: 570px) {
-  .Cards-container {
-    justify-content: center;
-  }
-}
-
 .Card-description {
   padding: 0 30px;
 }
@@ -65,4 +60,71 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.Modal {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  top: 0;
+}
+
+.Card-detail {
+  /* width: 60vw; */
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 30px;
+}
+
+.Card-detail-description {
+  width: 100%;
+  padding: 30px;
+}
+
+.Characteristic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Characteristic p {
+  margin: 5px 5px;
+}
+
+.Characteristic-value {
+  color: #17ff75;
+}
+
+.Pickle-container {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+}
+
+.Pickle-container figure img {
+  width: 200px;
+}
+
+@media screen and (max-width: 570px) {
+  .Cards-container {
+    justify-content: center;
+  }
+  .Card-detail {
+    flex-direction: column;
+  }
+  .Pickle-container figure img {
+    width: 100px;
+  }
 }
