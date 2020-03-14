@@ -1,14 +1,68 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-container {
   background-color: #282c34;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 30px;
+}
+
+.Cards-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: auto;
+  /* padding: 20px 40px; */
+}
+
+.Card {
+  border: 1px white solid;
+  border-radius: 10px;
+  transition: 0.3s ease-in all;
+  margin-bottom: 10px;
+  max-width: 300px;
+}
+
+.Card:hover {
+  /* border-color: #2a912c; */
+  cursor: pointer;
+  text-shadow: -2px 0 #14a4b0, 0 2px #14a4b0, 2px 0 #14a4b0, 0 -2px #14a4b0;
+}
+
+.Card-image figure {
+  margin: 0px;
+}
+
+.Card-image figure img {
+  border-radius: 10px;
+  transition: 0.3s ease-in all;
+}
+
+.Card-image figure img:hover {
+  filter: invert(100%);
+}
+
+@media screen and (max-width: 570px) {
+  .Cards-container {
+    justify-content: center;
+  }
+}
+
+.Card-description {
+  padding: 0 30px;
+}
+
+.Card-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
